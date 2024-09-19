@@ -1,0 +1,13 @@
+<h3>Cocina</h3>
+<h4>Pendiente de concinar: </h4>
+@for(pedido of pedidosPendientes; track pedido; let index=$index) {
+    <ul>
+        <li>({{pedido.number}}) {{pedido.description}} <button class="btn btn-warning" (click)="cocinarPedido(index)" [disabled]="cooking">Cocinar</button></li>
+    </ul>
+}
+<h4>Pedidos en elaboración:</h4>
+@for(pedido of pedidosEnCoccion; track pedido; let index=$index) {
+    <ul>
+        <li>({{pedido.number}}) {{pedido.description}} <button class="btn btn-warning" (click)="onPedidoCocinado()">Pedido Terminado!</button></li>
+    </ul>
+}

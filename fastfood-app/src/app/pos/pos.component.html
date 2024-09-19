@@ -1,0 +1,18 @@
+<h4>Punto de venta:</h4>
+<form #form="ngForm" (ngSubmit)="save(form)">
+<div class="mb-3 col-3 row">
+    <label for="exampleFormControlInput1" class="form-label">Nombre</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre" id="name" [(ngModel)]="pedido.name" #name="ngModel" name="name" required>
+    @if(name.touched &&name.invalid) {
+      <span>Debe ingresar un nombre</span>
+    }
+</div>
+<div class="mb-3 col-3 row">
+    <label for="exampleFormControlInput1" class="form-label">Pedido</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Pedido" id="pedido" [(ngModel)]="pedido.description" #description="ngModel" name="description" required>
+    @if(description &&description.invalid) {
+      <span>Debe ingresar un pedido</span>
+    }
+</div>
+<button class="btn-primary btn" type="submit">Generar pedido</button>
+</form>

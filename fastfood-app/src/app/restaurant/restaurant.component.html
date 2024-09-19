@@ -1,0 +1,11 @@
+<h1>Restaurante</h1>
+<h3>Pedidos ingresados:</h3>
+@for(pedido of pedidosIngresados; track pedido) {
+<span>Nombre: {{pedido.name}}</span>
+<span>    Pedido: {{pedido.description}}</span>
+<span>    Numero: {{pedido.number}}</span>
+<span>    Fecha: {{pedido.date}}</span>
+<br>
+}
+<app-pos (onFormSave)="onFormSave()"></app-pos>
+<app-kitchen></app-kitchen>
